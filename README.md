@@ -64,3 +64,5 @@ Payload:
 La aplicación está configurada para usar una base de datos H2 en un volumen persistente de Azure (`/home/data/portfolio_db`).
 
 Asegúrese de configurar las variables de entorno en la sección "Configuration" > "Application Settings" del App Service.
+
+<!-- Deployment trigger: 03/16/2026 15:11:54 -->
