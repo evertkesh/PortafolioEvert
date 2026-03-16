@@ -1,0 +1,33 @@
+# IDEs and OS
+.idea/
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+.metadata/
+*.iml
+*.log
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+**/target/
+**/dist/
+**/node_modules/
+**/build/
+bin/
+out/
+
+# Local configuration and Secrets (CRITICAL)
+.env
+**/.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temp and DB
+**/data/
+**/*.db
+**/*.tmp
