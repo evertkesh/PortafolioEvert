@@ -1,0 +1,52 @@
+package com.example.Evert.integration;
+
+import com.example.Evert.dto.ContactRequest;
+import com.example.Evert.repository.ContactRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@ActiveProfiles("test")
+public class ContactIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ContactRepository contactRepository;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @Test
+    void shouldSaveMessageAndSendEmail() throws Exception {
+        long initialCount = contactRepository.count();
+
+        ContactRequest request = ContactRequest.builder()
+                .name("Integration User")
+                .email("integration@test.com")
+                .subject("Integration Test")
+                .message("This is an integration test message.")
+                .build();
+
+        mockMvc.perform(post("/api/contact")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.success").value(true));
+
+        assertEquals(initialCount + 1, contactRepository.count());
+    }
+}

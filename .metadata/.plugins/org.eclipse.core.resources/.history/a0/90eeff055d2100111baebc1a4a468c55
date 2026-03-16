@@ -1,0 +1,17 @@
+# Configuracion de Produccion (Heroku/Render/AWS)
+app.allowed-origins=${APP_ALLOWED_ORIGINS}
+
+# Correo de destino
+app.contact.to-email=${APP_CONTACT_TO_EMAIL}
+
+# Configuracion Mail
+spring.mail.host=${SPRING_MAIL_HOST}
+spring.mail.port=${SPRING_MAIL_PORT}
+spring.mail.username=${SPRING_MAIL_USERNAME}
+spring.mail.password=${SPRING_MAIL_PASSWORD}
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.debug=false
+
+# Deshabilitar dev-tools si se usan
+spring.devtools.add-properties=false

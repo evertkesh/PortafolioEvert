@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Marketing Agency",
+    "description": "Proyecto académico ERP simplificada diseñada específicamente para optimizar la operativa diaria de agencias de marketing digital. Desarrollada con tecnologías Java y Spring Boot, la plataforma integra gestión de equipos, control de asistencia, seguimiento de servicios y análisis financiero en un único ecosistema.",
+    "tech": ["Java 17", "Spring Boot", "Bootstrap", "Thymeleaf", "JasperReports", "MySQL Workbench", "Azure", "H2 Database"],
+    "github": "https://github.com/evertkesh/appMarketing",
+    "demo": "https://marketingagency-bhg5ghffe5enhba3.eastus-01.azurewebsites.net/login?logout"
+  },
+  {
+    "title": "CloudShop",
+    "description": "Prototipo académico de e-commerce con UI responsive, filtros dinámicos y flujo de compra simulado.",
+    "tech": ["React", "Framer Motion", "Axios", "Node.js"],
+    "github": "https://github.com/evertkesh/Cluodshop.git",
+    "demo": "https://cloudshop.vercel.app"
+  },
+  {
+    "title": "Orbit Lab",
+    "description": "Laboratorio personal de UI/UX con prototipos interactivos, microanimaciones y pruebas de accesibilidad.",
+    "tech": ["Vue", "TypeScript", "TailwindCSS", "Vite"],
+    "github": "https://github.com/evertkesh/orbit-lab",
+    "demo": "https://orbit-lab.vercel.app"
+  }
+]

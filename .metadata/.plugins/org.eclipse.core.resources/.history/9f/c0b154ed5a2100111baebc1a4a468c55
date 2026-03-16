@@ -1,0 +1,18 @@
+# Perfil por defecto (Dev)
+spring.profiles.active=dev
+
+# Configuración básica
+spring.application.name=backPortafolio
+server.port=8080
+
+# OpenAPI configuration
+springdoc.api-docs.path=/api-docs
+springdoc.swagger-ui.path=/swagger-ui.html
+
+# Actuator (Health y Metrics)
+management.endpoints.web.exposure.include=health,info,metrics
+management.endpoint.health.show-details=always
+
+# Logging estructurado básico
+logging.level.com.example.Evert=DEBUG
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
