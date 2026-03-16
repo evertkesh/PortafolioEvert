@@ -61,7 +61,7 @@ class ContactControllerTest {
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.success").value(true))
-                .andExpect(jsonPath("$.message").value("Mensaje enviado correctamente"));
+                .andExpect(jsonPath("$.message").value("Mensaje recibido y guardado correctamente."));
 
         verify(emailService, times(1)).sendContactEmail(any(ContactRequest.class));
     }
